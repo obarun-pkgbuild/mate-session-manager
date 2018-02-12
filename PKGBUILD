@@ -3,7 +3,7 @@
 # 						Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-session-manager
-pkgver=1.18.2
+pkgver=1.20.0
 pkgrel=2
 pkgdesc="The MATE Session Handler"
 url="http://mate-desktop.org"
@@ -17,7 +17,7 @@ groups=('mate')
 conflicts=('mate-session-manager-gtk3')
 replaces=('mate-session-manager-gtk3')
 source=("http://pub.mate-desktop.org/releases/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('40f6bfdfc8945732bda183224d6ecf5b84e6b5bf8b5556bdabc96644bf3a3186')
+sha256sums=('4f5c4068f3e1f4d63bb86340b375c2f73dec8fb54066d7da589f70a89337f96f')
 validpgpkeys=('6DD4217456569BA711566AC7F06E8FDE7B45DAAC') # Eric Vidal
 
 build() {
@@ -27,7 +27,7 @@ build() {
         --libexecdir=/usr/lib/${pkgname} \
         --sysconfdir=/etc \
         --localstatedir=/var \
-        --disable-upower \
+        --enable-upower \
         --without-systemd
     make
 }
